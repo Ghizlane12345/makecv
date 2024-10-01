@@ -1,0 +1,123 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Couleur de fond douce */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Empêcher le défilement horizontal */
+}
+
+.container {
+    border: 2px solid #00796b; /* Bordure verte */
+    width: 700px;
+    margin: 50px auto;
+    background-color: #ffffff; /* Fond blanc pour le contenu */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    opacity: 0; /* Commencer caché pour l'effet d'apparition */
+    transform: translateY(20px); /* Commencer légèrement en bas */
+    animation: fadeIn 0.5s forwards; /* Animation d'apparition */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Complètement visible */
+        transform: translateY(0); /* Retour à la position d'origine */
+    }
+}
+
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b2dfdb; /* Fond léger pour la section de profil */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.profile-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-left: 15px; /* Pour un léger espacement */
+    transition: transform 0.3s; /* Effet de mise à l'échelle doux */
+}
+
+.profile-img:hover {
+    transform: scale(1.05); /* Agrandir au survol */
+}
+
+.info {
+    margin-left: 20px; /* Pour un espacement entre l'image et les infos */
+}
+
+.info h1 {
+    color: #004d40; /* Couleur sombre pour le nom */
+}
+
+.info h2 {
+    color: #00796b; /* Couleur verte pour le titre */
+}
+
+.info p {
+    margin: 0;
+    line-height: 1.6;
+    color: #333; /* Couleur sombre pour le texte */
+}
+
+hr {
+    border: 1px solid #00796b; /* Ligne horizontale verte */
+    margin: 20px 0;
+}
+
+h2 {
+    color: #004d40; /* Couleur sombre pour les titres de section */
+    margin: 0; /* Supprimer le marging pour un alignement parfait */
+    transition: color 0.3s; /* Transition de couleur douce */
+}
+
+h2:hover {
+    color: #00796b; /* Changer de couleur au survol */
+}
+
+.section {
+    padding-left: 50px;
+    opacity: 0; /* Commencer caché pour l'effet d'apparition */
+    transform: translateX(-20px); /* Commencer légèrement à gauche */
+    animation: slideIn 0.5s forwards; /* Animation de glissement */
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1; /* Complètement visible */
+        transform: translateX(0); /* Retour à la position d'origine */
+    }
+}
+
+/* Amélioration de la lisibilité */
+b {
+    color: #00796b; /* Couleur verte pour le texte en gras */
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    .profile-section {
+        flex-direction: column; /* Permet à l'image de passer sous le nom sur mobile */
+        align-items: center;
+    }
+
+    .profile-img {
+        margin: 0 auto; /* Centrer l'image */
+    }
+
+    .info {
+        text-align: center; /* Centrer le texte */
+        margin-left: 0; /* Supprimer le margin-left pour le texte centré */
+    }
+}
